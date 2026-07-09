@@ -3,11 +3,14 @@ import AppFrame from '../../components/AppFrame';
 import DASHBOARD_MENU from './data/dashboardMenu';
 import TeamDailyReport from './components/TeamDailyReport';
 
-const Dashboard = ({ currentUser }) => {
+const Dashboard = ({ currentUser, onLogout }) => {
   const [activeMenu, setActiveMenu] = useState('');
 
   return (
-    <AppFrame currentUser={currentUser}>
+    <AppFrame
+      currentUser={currentUser}
+      onLogout={onLogout}
+    >
       <div className="dashboard">
         {!activeMenu && (
           <>
@@ -35,7 +38,9 @@ const Dashboard = ({ currentUser }) => {
         )}
 
         {activeMenu === 'team-daily-report' && (
-          <TeamDailyReport />
+          <>
+            <TeamDailyReport />
+          </>
         )}
       </div>
     </AppFrame>

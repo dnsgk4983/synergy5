@@ -202,7 +202,7 @@
             color: #FFF;
             @include vw(padding, 4px 8px);
             border: 1px solid rgba($toss-gray, 0.3);
-            @include vw(border-radius,4px);
+            @include vw(border-radius, 4px);
             background: #565B66;
             transition: all .3s;
             &.active {

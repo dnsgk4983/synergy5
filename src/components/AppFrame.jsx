@@ -2,10 +2,10 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
-const AppFrame = ({ children, currentUser }) => {
+const AppFrame = ({ children, currentUser, onLogout }) => {
   return (
     <main className="app-frame">
-      <Header currentUser={currentUser} />
+      <Header currentUser={currentUser} onLogout={onLogout} />
 
       <div className="app-content">
         <Sidebar />

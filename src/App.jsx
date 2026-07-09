@@ -8,12 +8,17 @@ import CallSupport from './pages/CallSupport/CallSupport';
 import useAuth from './hooks/useAuth';
 
 const App = () => {
-  const { getCurrentUser } = useAuth();
+  const { getCurrentUser, logout } = useAuth();
 
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
 
   const handleLoginSuccess = (user) => {
     setCurrentUser(user);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setCurrentUser(null);
   };
 
   if (!currentUser) {
@@ -24,12 +29,22 @@ const App = () => {
     <Routes>
       <Route
         path="/"
-        element={<Dashboard currentUser={currentUser} />}
+        element={
+          <Dashboard
+            currentUser={currentUser}
+            onLogout={handleLogout}
+          />
+        }
       />
 
       <Route
         path="/call-support"
-        element={<CallSupport currentUser={currentUser} />}
+        element={
+          <CallSupport
+            currentUser={currentUser}
+            onLogout={handleLogout}
+          />
+        }
       />
     </Routes>
   );
