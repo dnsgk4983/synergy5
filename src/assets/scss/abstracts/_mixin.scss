@@ -1,0 +1,14 @@
+$mobile-design-width: 360px;
+$tablet-scale: 0.75;
+
+@mixin vw($property, $value) {
+  #{$property}: $value;
+
+  @media (max-width: 1024px) {
+    #{$property}: calc(#{$value} * #{$tablet-scale});
+  }
+
+  @media (max-width: 720px) {
+    #{$property}: calc((#{$value} / #{$mobile-design-width}) * 100vw);
+  }
+}

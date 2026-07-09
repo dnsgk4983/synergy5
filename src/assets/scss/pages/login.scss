@@ -1,0 +1,41 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 100vh;
+    min-height: 100vh;
+    background: $toss-gray;
+    &__title {
+        @include vw(font-size, 40px);
+        color: #FFF;
+        @include vw(margin-bottom, 20px);
+    }
+
+    &__form {
+        @include vw(max-width, 500px);
+        @include vw(padding, 20px);
+        background: #FFF;
+        input {
+            width: 100%;
+            @include vw(font-size, 18px);
+            @include vw(margin-bottom, 12px);
+            @include vw(padding, 20px 12px);
+            border: 1px solid rgba(#333, 0.2);
+            @include vw(border-radius, 4px);
+            outline: none;
+        }
+        button {
+            width: 100%;
+            @include vw(font-size, 18px);
+            font-weight: 500;
+            color: #FFF;
+            @include vw(padding, 12px 0);
+            border: none;
+            @include vw(border-radius, 4px);
+            outline: none;
+            background: $toss-blue;
+            cursor: pointer;
+        }
+    }
+}

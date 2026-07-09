@@ -1,0 +1,22 @@
+.sidebar {
+    @include vw(max-width, 220px);
+    width: 100%;
+    @include vw(padding, 20px);
+    box-shadow: 1px 1px 1px rgba(#333, 0.2);
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        @include vw(gap, 12px);
+    }
+
+    &__link {
+        @include vw(font-size, 14px);
+        color: $toss-gray;
+        font-weight: 500;
+        text-decoration: none;
+
+        &.active {
+            color: $toss-blue;
+        }
+    }
+}

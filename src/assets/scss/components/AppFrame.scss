@@ -1,0 +1,19 @@
+.app-frame {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.app-content {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.app-section {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    overflow-y: auto;
+}

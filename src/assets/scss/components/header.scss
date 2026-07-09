@@ -1,0 +1,21 @@
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include vw(padding, 20px);
+    background: $toss-gray;
+    &__logo {
+        @include vw(font-size, 24px);
+        color: #FFF;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        @include vw(gap, 10px);
+        span {
+            @include vw(font-size, 20px);
+            color: #FFF;
+        }
+    }
+}

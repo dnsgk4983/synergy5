@@ -1,0 +1,58 @@
+.call-support {
+    max-width: 800px;
+    width: 100%;
+    @include vw(padding, 20px 0);
+    &__frame {
+        @include vw(margin, 20px 0);
+        background: #FFF;
+        .btn {
+            &-wrap {
+                @include vw(padding, 0 20px);
+            }
+        }
+    }
+    &__content {
+        @include vw(padding-bottom, 20px);
+    }
+    &__capture {
+        @include vw(padding, 20px);
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include vw(margin-bottom, 20px);
+        h1 {
+            @include vw(font-size, 28px);
+            font-weight: 900;
+        }
+        small {
+            @include vw(font-size, 20px);
+            font-weight: 700;
+        }
+    }
+
+    table {
+        width: 100%;
+        border: 1px solid rgba(#333, 0.2);
+        th, td {
+            text-align: center;
+            @include vw(font-size, 18px);
+            @include vw(padding, 12px 0);
+        }
+        tbody {
+            tr {
+                border-top: 1px solid rgba(#333, 0.2);
+            }
+        }
+    }
+    
+    .btn-action {
+        justify-content: flex-end;
+        .btn {
+            @include vw(max-width, 120px);
+            @include vw(font-size, 14px);
+        }
+    }
+}

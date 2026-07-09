@@ -1,0 +1,344 @@
+.dashboard {
+    flex: 1;
+    min-height: 0;
+    @include vw(padding, 40px);
+    &__title {
+        @include vw(margin-bottom, 24px);
+        h1 {
+            @include vw(font-size, 32px);
+            font-weight: 900;
+        }
+        h3 {
+
+            @include vw(font-size, 28px);
+            span {
+                font-weight: 900;
+                color: $toss-blue;
+            }
+        }
+    }
+    &__panel {
+       @include vw(margin-top, 20px);
+       @include vw(padding, 20px);
+       @include vw(border-radius, 12px);
+       background: #FFF;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2 {
+            @include vw(font-size, 24px);
+            font-weight: 700;
+        }
+    }
+
+    &__menu {
+        display: grid;
+        @include vw(gap, 8px);
+        grid-template-columns: repeat(4, 1fr);
+        &__button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $toss-gray;
+            @include vw(padding, 48px 0);
+            border: 1px solid rgba($toss-gray, 0.3);
+            @include vw(border-radius, 8px);
+            background: transparent;
+            transition: all .2s;
+            strong {
+                @include vw(font-size, 28px);
+            }
+            span {
+                @include vw(font-size, 18px);
+            }
+            &:hover {
+                color: #FFF;
+                border-color: $toss-blue;
+                background: $toss-blue;
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        @include vw(gap, 4px);
+    }
+
+    &__cards {
+        display: flex;
+        @include vw(gap, 10px);
+        @include vw(margin, 20px 0);
+    }
+    &__card {
+        width: 100%;
+        text-align: center;
+        @include vw(padding, 40px 0);
+        @include vw(border-radius, 8px);
+        background: #FFF;
+        box-shadow: 0 0 0 1px rgba(#333, 0.2);
+        transition: all .3s;
+        strong {
+            @include vw(font-size, 24px);
+            color: $toss-gray;
+            transition: all .3s;
+        }
+        span {
+            display: block;
+            @include vw(font-size, 20px);
+            color: $toss-gray;
+            @include vw(margin-top, 4px);
+            transition: all .3s;
+        }
+        &:hover {
+            background: $toss-blue;
+            strong {
+                color: #FFF;
+            }
+            span {
+                color: #FFF;
+            }
+        }
+    }
+    &__filter {
+        display: flex;
+        @include vw(gap, 4px);
+        button {
+            display: block;
+            min-width: fit-content;
+            @include vw(font-size, 14px);
+            font-weight: 500;
+            color: #FFF;
+            @include vw(padding, 4px 8px);
+            border: none;
+            outline: none;
+            @include vw(border-radius, 4px);
+            background: $toss-gray;
+            &.active {
+                background: $toss-blue;
+            }
+        }
+    }
+
+    &__table {
+        width: 100%;
+        @include vw(margin, 20px 0);
+        border: 1px solid rgba(#333, 0.2);
+        th, td {
+            @include vw(font-size, 18px);
+            text-align: center;
+            @include vw(padding, 12px 20px);
+        }
+        tbody {
+            tr {
+                border-top: 1px solid rgba(#333, 0.2);
+            }
+        }
+    }
+
+    &__chart {
+        &__row {
+            display: flex;
+            align-items: center;
+            @include vw(gap, 10px);
+            @include vw(margin-bottom, 10px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__label {
+            @include vw(min-width, 120px);
+        }
+        &__bar {
+            position: relative;
+            width: 100%; 
+            &:hover {
+                .dashboard__chart__value {
+                    opacity: 1
+                }
+            }
+        }
+        &__fill {
+            position: relative;
+            width: 100%;
+            @include vw(height, 20px);
+        }
+
+        &__value {
+            position: absolute;
+            @include vw(top, -32px);
+            @include vw(right, 20px);
+            @include vw(font-size, 18px);
+            color: #FFF;
+            opacity: 0;
+            @include vw(padding, 8px 12px);
+            @include vw(border-radius, 8px);
+            background: #000;
+            &:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                @include vw(width, 8px);
+                @include vw(height, 8px);
+                @include vw(bottom, -4px);
+                transform: rotate(45deg) translateX(-50%);
+                transform-origin: center center;
+                background: #000;
+            }
+        }
+    }
+}
+
+.team__report {
+    &__tabs {
+        display: flex;
+        @include vw(gap, 4px);
+        button {
+            @include vw(font-size, 14px);
+            font-weight: 500;
+            color: #FFF;
+            @include vw(padding, 4px 8px);
+            border: 1px solid rgba($toss-gray, 0.3);
+            @include vw(border-radius,4px);
+            background: #565B66;
+            transition: all .3s;
+            &.active {
+                color: #FFF;
+                border-color: $toss-blue;
+                background: $toss-blue;
+            }
+            &:hover {
+                color: #FFF;
+                border-color: $toss-blue;
+                background: $toss-blue;
+            }
+        }
+    }
+
+    &__head {
+        @include vw(margin, 24px 0);
+        h2 {
+            @include vw(font-size, 20px);
+        }
+        p {
+            @include vw(font-size, 14px);
+            @include vw(margin-top, 12px);
+        }
+    }
+
+    &__summary {
+        ul {
+            display: flex;
+            @include vw(gap, 10px);
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                @include vw(max-width, 200px);
+                @include vw(max-height, 200px);
+                @include vw(width, 200px);
+                @include vw(height, 200px);
+                color: #FFF;
+                border-radius: 50%;
+                background: #565B66;
+                &:nth-child(2) {
+                    background: #748199;
+                }
+                &:nth-child(3) {
+                    background: #7290CC;
+                }
+                &:nth-child(4) {
+                    background: #5C92FF;
+                }
+                strong {
+                    @include vw(font-size, 28px);
+                }
+                span {
+                    display: block;
+                    @include vw(font-size, 18px);
+                    @include vw(margin-top, 4px);
+                }
+            }
+        }
+    }
+
+    &__table {
+        @include vw(margin-top, 24px);
+        table {
+            width: 100%;
+            border: 1px solid rgba($toss-gray, 0.3);
+            tbody {
+                tr {
+                    border-top: 1px solid rgba($toss-gray, 0.3);
+                }
+            }
+            th, td {
+                @include vw(font-size, 18px);
+                text-align: center;
+                @include vw(padding, 20px 0);
+                border-right: 1px solid rgba($toss-gray, 0.3);
+                &:first-child {
+                    width: 15%;
+                }
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.kpi-modal {
+    &__tabs {
+        display: flex;
+        @include vw(gap, 8px);
+        @include vw(margin-bottom, 8px);
+        button {
+            width: 100%;
+            @include vw(font-size, 20px);
+            color: #FFF;
+            @include vw(padding, 12px 0);
+            border: none;
+            outline: none;
+            background: $toss-gray;
+            transition: all .3s;
+            &:hover {
+                background: $toss-blue;
+            }
+            &.active {
+                background: $toss-blue;
+            }
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include vw(gap, 8px);
+        @include vw(margin-bottom, 8px);
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        @include vw(padding, 18px 12px);
+        @include vw(border-radius, 4px);
+        border: 1px solid rgba($toss-gray, 0.3);
+        span {
+            @include vw(font-size, 18px);
+            word-break: keep-all;
+        }
+        strong {
+            display: block;
+            font-weight: 700;
+            @include vw(font-size, 24px);
+            color: $toss-blue;
+            @include vw(margin-bottom, 4px);
+        }
+    }
+}

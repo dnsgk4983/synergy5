@@ -1,0 +1,55 @@
+@import "../abstracts/mixin";
+@import "../base/variables.scss";
+
+body {
+    background: #F5F5F5;
+}
+
+html,
+body,
+#root {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+.contents {
+    flex: 1;
+    display: flex;
+}
+
+.btn {
+    width: 100%;
+    @include vw(font-size, 18px);
+    font-weight: 500;
+    @include vw(padding, 12px 0);
+    border: none;
+    outline: none;
+    @include vw(border-radius, 4px);
+    cursor: pointer;
+    &-primary {
+        color: #FFF;
+        background: $toss-blue;
+    }
+    &-gray {
+        color: #FFF;
+        background: $toss-gray;
+    }
+    &-wrap {
+        display: flex;
+        @include vw(gap, 8px);
+        &.flex-end {
+            justify-content: flex-end
+        }
+    }
+
+    &-small {
+        @include vw(max-width, 200px);
+    }
+}
