@@ -38,6 +38,16 @@ const App = () => {
       />
 
       <Route
+        path="/synergy5/"
+        element={
+          <Dashboard
+            currentUser={currentUser}
+            onLogout={handleLogout}
+          />
+        }
+      />
+
+      <Route
         path="/call-support"
         element={
           <CallSupport
